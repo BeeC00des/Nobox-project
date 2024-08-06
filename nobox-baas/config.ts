@@ -3,7 +3,7 @@ import  {  Config,  getFunctions,  getSchemaCreator  }  from  "nobox-client";
 export const config: Config = {
 endpoint:  "https://api.nobox.cloud",
 project:  "Noboxform", // no space to avoid error, put in documentation
-token: "aa5g2d7sfobbmbzm3m9iz2m-8abu-ubf8am5mb97",
+token: "aa5g2d7sfobbmbzm3m9iz2m-8abu-ubf8am5mb97",  // why is the token made public is it encrypted.
 };
 
 export const createRowSchema = getSchemaCreator(config, { type: "rowed" });
