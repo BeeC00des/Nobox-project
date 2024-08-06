@@ -1,9 +1,11 @@
 "use client";
-// import { Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { UserModel } from "../../nobox-baas/record-structures/user";
 
+
+const inter = Inter({ subsets: ["latin"] });
 
 interface User {
   email: string;
@@ -31,10 +33,10 @@ export default function Home() {
     setIsLoading(true);
 
     const user: ReturnObject<User> = await UserModel.insertOne({
-      firstName: 'goal pay',
-      email: 'beedevgmail.com',
-      age: 89,
-      password: "running box app"
+      firstName: 'test',
+      email: 'testgmail.com',
+      age: 40,
+      password: "app at work"
     });
 
     console.log(user);
@@ -50,7 +52,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between f lg:flex">
         <div className="fixed left-0 top-0 w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          <p onClick={() => addSampleUser()} className='boder-2 border-gray-500'> Add User <code style={{ fontSize: "10px" }}>{isLoading && `loading...`}</code></p>
+          <p onClick={() => addSampleUser()} className='border-2 border-gray-200 p-3'> Add User <code style={{ fontSize: "10px" }}>{isLoading && `loading...`}</code></p>
           {userPassword && (
             <>
               <p>User Password: {userPassword}</p> <br />
