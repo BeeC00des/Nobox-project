@@ -21,7 +21,7 @@ export const UserStructure: Space<User> = {
             description: "User's Password",
             required: true,
             type: String,
-            hashed: true
+            // hashed: true
         },
         firstName: {
             description: "User's First Name",

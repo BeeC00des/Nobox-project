@@ -2,7 +2,7 @@ import  {  Config,  getFunctions,  getSchemaCreator  }  from  "nobox-client";
 
 export const config: Config = {
 endpoint:  "https://api.nobox.cloud",
-project:  "Nobox form",
+project:  "Noboxform", // no space to avoid error, put in documentation
 token: "aa5g2d7sfobbmbzm3m9iz2m-8abu-ubf8am5mb97",
 };
 
