@@ -121,3 +121,6 @@ export default function muiltUserForm() {
   
   );
 }
+
+// onclick repetitive action on button make submit to nobox mutiple depending on thr number of click
+

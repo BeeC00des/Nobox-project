@@ -36,6 +36,7 @@ export default function SingleUserForm() {
   // Handle form submission
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    console.log(`First Name: ${firstName}, Last Name: ${age}, Email: ${email},Password: ${password}`);
 
     // Basic validation
     if (!firstName || !email || !age || !password) {
@@ -62,9 +63,10 @@ export default function SingleUserForm() {
 
   return (
     <div className='flex w-full min-h-screen items-center justify-center p-24 '>
-      <div className="border-2 border-gray-300 h-auto p-3 lg:w-6/12 sm:w-full">
-      <h1>Add a Single Userform</h1>
-      <form onSubmit={handleSubmit} className=''>
+      <div className="border-2 border-gray-300 h-auto p-3 lg:w-5/12 gap-1 sm:w-full relative">
+      <h1 className="pl-3 text-lg bold">Single Userform</h1>
+      
+      <form className='p-3' onSubmit={handleSubmit}>
         <div className='pb-2'>
           <label className='pr-5'>First Name:</label>
           <input className=' border-2 rounded-lg  border-gray-200 p-2 focus:outline-none '
@@ -74,7 +76,7 @@ export default function SingleUserForm() {
           />
         </div>
         <div className='pb-2'>
-          <label className='pr-5'>Email:</label>
+          <label className='pr-16'>Email:</label>
           <input className=' border-2 rounded-lg  border-gray-200 p-2 focus:outline-none '
             type="email"
             value={email}
@@ -82,7 +84,7 @@ export default function SingleUserForm() {
           />
         </div>
         <div className='pb-2'>
-          <label className='pr-5'>Age:</label>
+          <label className='pr-20'>Age:</label>
           <input className=' border-2 rounded-lg  border-gray-200 p-2 focus:outline-none '
             type="number"
             value={age}
@@ -90,25 +92,29 @@ export default function SingleUserForm() {
           />
         </div>
         <div className='pb-2'>
-          <label className='pr-5'>Password:</label>
+          <label className='pr-8'>Password:</label>
           <input className=' border-2 rounded-lg  border-gray-200 p-2 focus:outline-none '
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className=' border-2 rounded-lg  border-black-200 text-black bg-white p-2' type="submit">Submit</button>
+        <div className='pt-5'>
+        <button className=' absolute bottom-0 right-0 border-2 rounded-lg  border-black-200 text-black bg-white p-2 mr-3' type="submit">Submit</button>
+        </div>
+       
       </form>
       </div>
       <div className="border-2 border-gray-300 h-auto p-3 lg:w-6/12 sm:w-full">
+      <h1 className="pl-3 pb-5 text-lg bold">Single Userform Data Submitted</h1>
       {response && (
-        <div className=''>
-          <h2>Response:</h2>
-          <p>First Name: {response.firstName}</p>
-          <p>Email: {response.email}</p>
-          <p>Age: {response.age}</p>
-          <p>Password: {response.password}</p>
-          {/* <p>Success: {response.success ? 'Yes' : 'No'}</p> */}
+        <div className='pl-3'>
+          <h2 className='pb-2'>Response:</h2>
+          <p className='pb-2'>First Name: {response.firstName}</p>
+          <p className='pb-2'>Email: {response.email}</p>
+          <p className='pb-2'>Age: {response.age}</p>
+          <p className='pb-2'>Password: {response.password}</p>
+        
         </div>
       )}
       </div>

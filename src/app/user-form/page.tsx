@@ -118,13 +118,10 @@ export default function UserForm() {
           <p>Email: {response.email}</p>
           <p>Age: {response.age}</p>
           <p>Password: {response.password}</p>
-          {/* <p>Success: {response.success ? 'Yes' : 'No'}</p> */}
         </div>
       )}
       </div>
-
-      
-      </div>
+    </div>
   );
 };
 
